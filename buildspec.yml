@@ -4,19 +4,19 @@ phases:
     runtime-versions:
       dotnet: 3.1
     commands:
-      - echo "Empezamos la instalacion Dotnet"
+      - echo "Empezamos la instalacion Dotnet"
   pre_build:
     commands:
-      - echo "Empezamos la fase de compilacion"
-      - dotnet restore MvcPracticaAWS/MvcPracticaAWS.csproj
+      - echo "Empezamos la fase de compilacion"
+      - dotnet restore MvcPracticaAWS/MvcPracticaAWS.csproj
   build:
     commands:
-      - echo "Realizamos un Build del proyecto"
-      - dotnet build MvcPracticaAWS/MvcPracticaAWS.csproj
+      - echo "Realizamos un Build del proyecto"
+      - dotnet build MvcPracticaAWS/MvcPracticaAWS.csproj
   post_build:
     commands:
-      - echo "Empezamos publicacion"
-      - dotnet publish -c release -o ./build_output MvcPracticaAWS/MvcPracticaAWS.csproj
+      - echo "Empezamos publicacion"
+      - dotnet publish -c release -o ./build_output MvcPracticaAWS/MvcPracticaAWS.csproj
 artifacts:
   discard-paths: yes
   files:
