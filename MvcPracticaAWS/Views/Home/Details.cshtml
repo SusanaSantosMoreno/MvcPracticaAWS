@@ -59,25 +59,32 @@
                 <th>Titulo</th>
                 <th>Imagen</th>
                 <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
             @foreach (Foto foto in Model.Fotos) {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => foto.Titulo)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => foto.Imagen)
-                    </td>
-                    <td>
-                        <a asp-action="DeleteFoto" asp-controller="Home" 
-                           asp-route-idUsuario="@Model.IdUsuario" 
-                           asp-route-imagen="@foto.Imagen">
-                            <i class="bi bi-dash-circle-fill text-dark"></i>
-                        </a>
-                    </td>
-                </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => foto.Titulo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => foto.Imagen)
+                </td>
+                <td>
+                    <a asp-action="DeleteFoto" asp-controller="Home"
+                       asp-route-idUsuario="@Model.IdUsuario"
+                       asp-route-imagen="@foto.Imagen">
+                        <i class="bi bi-dash-circle-fill text-dark"></i>
+                    </a>
+                </td>
+                <td>
+                    <a asp-action="DetailsImagen" asp-controller="Home"
+                       asp-route-imagen="@foto.Imagen">
+                        <i class="bi bi-info-circle-fill text-dark"></i>
+                    </a>
+                </td>
+            </tr>
             }
         </tbody>
     </table>

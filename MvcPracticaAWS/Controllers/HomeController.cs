@@ -98,5 +98,10 @@ namespace MvcPracticaAWS.Controllers {
             await this.serviceS3.DeleteFileAsync(imagen);
             return RedirectToAction("Details", new { idUsuario = idUsuario });
         }
+
+        public async Task<IActionResult> DetailsImagen (String imagen) {
+            ViewData["imagen"] = imagen;
+            return View();
+        }
     }
 }

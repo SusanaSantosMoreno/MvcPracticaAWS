@@ -1,0 +1,10 @@
+﻿
+@{
+    ViewData["Title"] = "DetailsImagen";
+    String imagen = (String) ViewData["imagen"];
+}
+
+<h1 class="text-center mt-3">imagen</h1>
+<img src=@(String.Format("{0}{1}", "https://bucket-practica-aws.s3.amazonaws.com/", imagen)) 
+     class="img-fluid mt-3" alt="imagen">
+
