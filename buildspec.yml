@@ -8,15 +8,15 @@ phases:
   pre_build:
     commands:
       - echo "Empezamos la fase de compilacion"
-      - dotnet restore MvcCoreAWSCodePipeLine/MvcCoreAWSCodePipeLine.csproj
+      - dotnet restore MvcPracticaAWS/MvcPracticaAWS.csproj
   build:
     commands:
       - echo "Realizamos un Build del proyecto"
-      - dotnet build MvcCoreAWSCodePipeLine/MvcCoreAWSCodePipeLine.csproj
+      - dotnet build MvcPracticaAWS/MvcPracticaAWS.csproj
   post_build:
     commands:
       - echo "Empezamos publicacion"
-      - dotnet publish -c release -o ./build_output MvcCoreAWSCodePipeLine/MvcCoreAWSCodePipeLine.csproj
+      - dotnet publish -c release -o ./build_output MvcPracticaAWS/MvcPracticaAWS.csproj
 artifacts:
   files:
     - ./build_output/**/*
