@@ -18,5 +18,6 @@ phases:
       - echo "Empezamos publicacion"
       - dotnet publish -c release -o ./build_output MvcPracticaAWS/MvcPracticaAWS.csproj
 artifacts:
+  discard-paths: yes
   files:
     - ./build_output/**/*
