@@ -1,0 +1,22 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      dotnet: 3.1
+    commands:
+      - echo "Empezamos la instalacion Dotnet"
+  pre_build:
+    commands:
+      - echo "Empezamos la fase de compilacion"
+      - dotnet restore MvcPracticaAWS/MvcPracticaAWS.csproj
+  build:
+    commands:
+      - echo "Realizamos un Build del proyecto"
+      - dotnet build MvcPracticaAWS/MvcPracticaAWS.csproj
+  post_build:
+    commands:
+      - echo "Empezamos publicacion"
+      - dotnet publish -c release -o ./build_output MvcPracticaAWS/MvcPracticaAWS.csproj
+artifacts:
+  files:
+    - ./build_output/**/*
